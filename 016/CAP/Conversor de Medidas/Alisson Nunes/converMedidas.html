@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Mini avaliação - Converções de medidas</title>
+		<link rel="stylesheet" href="converMedidas.css">
+	</head>
+	<body>
+		<div>
+			<form action="cgi-bin/converMedidas.cgi" method="get">
+				<select name="convert" required>
+					<option disabled selected value>Selecione uma conversão</option>
+					<optgroup label="Converter distância">
+						<option value="11">Metros &#8594; Milhas</option>
+						<option value="12">Milhas &#8594; Metros</option>
+					</optgroup>
+					<optgroup label="Converter volume">
+						<option value="21">Litros &#8594; Galões</option>
+						<option value="22">Galões &#8594; Litros</option>
+					</optgroup>
+					<optgroup label="Converter massa">
+						<option value="31">Quilogramas &#8594; Libras</option>
+						<option value="32">Libras &#8594; Quilogramas</option>
+					</optgroup>
+				</select>
+				<br>
+				<br>
+				<div><input type="number" name="input1" value="0"> &#8594; <input type="text" value="?" disabled></div>
+				<br>
+				<input type="submit" value="Calcular">
+			</form>
+		</div>
+	</body>
+</html>
