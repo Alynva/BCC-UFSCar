@@ -1,0 +1,19 @@
+.fail {
+	border-color: rgb(200,50,50);
+	background-color: rgb(250,200,200);
+}
+div#moreLetter, .tabV {
+	margin: 0 auto;
+}
+.tabV, .tabV * {
+	border: 1px solid;
+}
+table, table * {
+	text-align: center;
+}
+table thead *:not([type='button']) {
+	font-weight: bold;
+}
+input.letraP:not([type='button']) {
+	width: 20px;
+}

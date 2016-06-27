@@ -1,0 +1,82 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Tabela verdade com cálculo proposicional</title>
+		<meta name="author" content="Alisson Nunes">
+		<meta name="reply-to" content="alynva@gmail.com">
+		<meta name="generator" content="Sublime Text 2">
+		<meta http-equiv="content-language" content="pt-br">
+		<meta name="keywords" content="logica proposicional, tabela verdade">
+		<meta name="description" content="Um algoritmo para a construção de tabela verdade da lógica proposicional.">
+		<meta name="viewport" content="initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no, width = device-width">
+
+		<script src="C:/wamp/www/js/jquery-2.2.1.min.js"></script>
+		<link rel="stylesheet" href="tabela-verdade.css">
+	</head>
+	<body>
+		<table style='position:absolute'>
+			<thead>
+				<tr>
+					<td colspan='2'>Conversões</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>~</td>
+					<td>¬</td>
+				</tr>
+				<tr>
+					<td>^*</td>
+					<td>∧</td>
+				</tr>
+				<tr>
+					<td>v*</td>
+					<td>∨</td>
+				</tr>
+				<tr>
+					<td>v-</td>
+					<td>⊻</td>
+				</tr>
+				<tr>
+					<td>--&#62;</td>
+					<td>→</td>
+				</tr>
+				<tr>
+					<td>&#60;--&#62;</td>
+					<td>↔</td>
+				</tr>
+				<tr>
+					<td>&#60;=&#62;</td>
+					<td>⇔</td>
+				</tr>
+				<tr>
+					<td>--v</td>
+					<td>↓</td>
+				</tr>
+				<tr>
+					<td>--^</td>
+					<td>↑</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div id="moreLetter" style="width:60px">
+			<input type="button" value="+1 letra" onclick="moreLetras()">
+		</div>
+
+		<table class="tabV">
+			<thead>
+				<tr>
+					<td>
+						<input id="calcP" type="text" onkeyup="validaCalc(), theConectiv($(this).val(), $(this).attr('id'))">
+					</td>
+				</tr>
+			</thead>
+			<tbody>
+				
+			</tbody>
+		</table>
+
+		<script src="tabela-verdade.js"></script>
+	</body>
+</html>
