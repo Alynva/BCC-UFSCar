@@ -77,7 +77,8 @@ input[type="submit"]:hover {
 	content: attr(data-acertos);
 	position: absolute;
 	top: 0;
-	left: 50%;
+	left: 0;
+	right: 0;
 	font-size: 1.5em;
 }
 #game:after {
@@ -85,11 +86,15 @@ input[type="submit"]:hover {
 	content: "Erros: " attr(data-erros);
 	position: absolute;
 	bottom: 0;
-	left: calc(50% - 4em);
+	left: 0;
+	right: 0;
 	font-size: 1.5em;
 }
 #game.perdeu:before {
 	content: attr(data-palavra);
+}
+#game:before, #game:after {
+	letter-spacing: .1em;
 }
 #game > div, #game > div:before, #game > div:after {
 	content: '';
