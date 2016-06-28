@@ -12,8 +12,8 @@ int main() {
 	char temp[50] = {'\n'};
 	char theErred;
 	char erred[50];
-	char classe[20];
 	char copy[50];
+	char classe[20];
 	
 			
 	dados = getenv("QUERY_STRING");
@@ -43,8 +43,8 @@ int main() {
 						cont++;
 					}
 				}
-				strcpy(copy, erred);
 				if (!cont) {
+					strcpy(copy, erred);
 					snprintf(erred, sizeof erred, "%s%c", copy, myWord[j]);
 				}
 			}
@@ -68,6 +68,11 @@ int main() {
 	printf("<html>");
 		printf("<head>");
 			printf("<meta charset=\"utf-8\">");
+			printf("<meta name=\"author\" content=\"Alisson Nunes\">");
+			printf("<meta name=\"reply-to\" content=\"alynva@gmail.com\">");
+			printf("<meta name=\"generator\" content=\"Dev-C++ 5.11\">");
+			printf("<meta http-equiv=\"content-language\" content=\"pt-br\">");
+			printf("<meta name=\"description\" content=\"Um jogo simples, com a mecânica programada em Lingaugem C.\">");
 			printf("<title>Jogo da forca - CGI + Arquivos</title>");
 			printf("<link rel=\"stylesheet\" href=\"../jogo-da-forca.css\">");
 		printf("</head>");

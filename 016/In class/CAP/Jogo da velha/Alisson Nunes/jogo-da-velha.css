@@ -1,0 +1,115 @@
+* {
+	font-family: monospace;
+	font-size: 1.1em;
+	text-align: center;
+	outline:none;
+	transition: opacity .4s;
+}
+body {
+	background-color: rgb(40,80,150);
+	color: white;
+	margin: 0;
+}
+#placar {
+	position: absolute;
+	top: 10px;
+	left: 0px; right: 0;
+	margin: auto;
+	text-align: center;
+	font-family: monospace;
+	cursor: pointer;
+}
+#placar > div {
+	display: inline-flex;
+	padding: 10px;
+	background-color: transparent;
+	color: white;
+}
+.prox1 #o, .prox2 #x {
+	background-color: white;
+	color: black;
+	border-bottom: 3px solid;
+}
+.prox1 #o {
+	border-bottom-color: red;
+}
+.prox2 #x {
+	border-bottom-color: blue;
+}
+#placar > div > span:nth-of-type(1) {
+	font-size: 2em;
+}
+#placar > div > span:nth-of-type(2) {
+	font-size: 1.2em;
+}
+#jogo {
+	position: absolute;
+	top: 0; bottom: 0; left: 0; right: 0;
+	margin: auto;
+	height: calc(80vmin - 30px);
+	width: calc(80vmin - 30px);
+}
+.cell, .cell0, .cell1, .cell2 {
+	width: calc((80vmin - 30px) / 3);
+	height: calc((80vmin - 30px) / 3);
+	border: 5px white solid;
+	margin: -4px;
+	display: inline-block;
+}
+a:nth-of-type(1) .cell, a:nth-of-type(1) .cell0, a:nth-of-type(1) .cell1, a:nth-of-type(1) .cell2,
+a:nth-of-type(2) .cell, a:nth-of-type(2) .cell0, a:nth-of-type(2) .cell1, a:nth-of-type(2) .cell2,
+a:nth-of-type(3) .cell, a:nth-of-type(3) .cell0, a:nth-of-type(3) .cell1, a:nth-of-type(3) .cell2 {
+	border-top: 0;
+}
+a:nth-of-type(3) .cell, a:nth-of-type(3) .cell0, a:nth-of-type(3) .cell1, a:nth-of-type(3) .cell2,
+a:nth-of-type(6) .cell, a:nth-of-type(6) .cell0, a:nth-of-type(6) .cell1, a:nth-of-type(6) .cell2,
+a:nth-of-type(9) .cell, a:nth-of-type(9) .cell0, a:nth-of-type(9) .cell1, a:nth-of-type(9) .cell2 {
+	border-right: 0;
+}
+a:nth-of-type(9) .cell, a:nth-of-type(9) .cell0, a:nth-of-type(9) .cell1, a:nth-of-type(9) .cell2,
+a:nth-of-type(8) .cell, a:nth-of-type(8) .cell0, a:nth-of-type(8) .cell1, a:nth-of-type(8) .cell2,
+a:nth-of-type(7) .cell, a:nth-of-type(7) .cell0, a:nth-of-type(7) .cell1, a:nth-of-type(7) .cell2 {
+	border-bottom: 0;
+}
+a:nth-of-type(1) .cell, a:nth-of-type(1) .cell0, a:nth-of-type(1) .cell1, a:nth-of-type(1) .cell2,
+a:nth-of-type(4) .cell, a:nth-of-type(4) .cell0, a:nth-of-type(4) .cell1, a:nth-of-type(4) .cell2,
+a:nth-of-type(7) .cell, a:nth-of-type(7) .cell0, a:nth-of-type(7) .cell1, a:nth-of-type(7) .cell2 {
+	border-left: 0;
+}
+.prox1 .cell0:hover {
+	background-image: radial-gradient(transparent 38%, rgba(255,0,0,.4) 38%, rgba(255,0,0,.4) 44%, transparent 44%);
+	background-size: calc((80vmin - 30px) / 3); 
+	background-position: 0 0;
+	cursor: pointer;
+}
+.prox2 .cell0:hover {
+	background-image: linear-gradient(45deg, transparent 47%, rgba(0,0,255,.4) 47%, rgba(0,0,255,.4) 53%, transparent 53%), linear-gradient(-45deg, transparent 47%, rgba(0,0,255,.4) 47%, rgba(0,0,255,.4) 53%, transparent 53%);
+	background-size: calc((80vmin - 30px) / 6); 
+	background-position: calc((80vmin - 30px) / 12);
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+.cell1 {
+	background-image: radial-gradient(transparent 38%, red 38%, red 44%, transparent 44%);
+	background-size: calc((80vmin - 30px) / 3); 
+	background-position: 0 0;
+}
+.cell2 {
+	background-image: linear-gradient(45deg, transparent 47%, blue 47%, blue 53%, transparent 53%), linear-gradient(-45deg, transparent 47%, blue 47%, blue 53%, transparent 53%);
+	background-size: calc((80vmin - 30px) / 6); 
+	background-position: calc((80vmin - 30px) / 12);
+	background-repeat: no-repeat;
+}
+#log {
+	position: absolute;
+	width: 100%;
+	font-size: calc((80vmin - 30px) / 6);
+	bottom: 10px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	font-weight: bolder;
+	font-family: sans-serif;
+	cursor: pointer;
+	pointer-events: none;
+}
