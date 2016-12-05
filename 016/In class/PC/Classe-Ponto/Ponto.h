@@ -1,6 +1,6 @@
 class Ponto {
 	private:
-		bool declared;
+//		bool declared;
 		int x;
 		int y;
 		char id;
@@ -12,7 +12,7 @@ class Ponto {
 		int getX() const;
 		int getY() const;
 		char getId() const;
-		bool getDeclared() const;
+//		bool getDeclared() const;
 
 		bool setX(int);
 		bool setY(int);

@@ -1,7 +1,15 @@
 #include <vector>
 #include <iostream>
-//#include <windows.h>
+#include <stdlib.h>
+#include <windows.h>
 #include "Ponto.h"
+
+#ifdef __cplusplus__
+  #include <cstdlib>
+#else
+  #include <stdlib.h>
+#endif
+
 
 using namespace std;
 
@@ -19,23 +27,30 @@ int indexOfId(char word, auto base) {
 }
 
 int main() {
-	cout << "\033[0m\033[2J\033[1;1H";
+//	cout << "\033[0m\033[2J\033[1;1H";
 	
-//	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE)
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	
 	string MSGs[8];
-	MSGs[0] = "\033[103;30mThis point can't to be in this coordinate X.\033[0m";
-	MSGs[1] = "\033[103;30mThis point can't to be in this coordinate Y.\033[0m";
-	MSGs[2] = "\033[103;30mThis point can't go more.\033[0m";
-	MSGs[3] = "\033[103;30mThis point don't exist.\033[0m";
-	MSGs[4] = "\033[103;30mPlease, don't put equal points.\033[0m";
-	MSGs[5] = "\033[103;30mThese points are in similar coordinates.\033[0m";
-	MSGs[6] = "\033[103;30mYes.\033[0m";
-	MSGs[7] = "\033[103;30mNo.\033[0m";
+	MSGs[0] = "This point can't to be in this coordinate X.";
+	MSGs[1] = "This point can't to be in this coordinate Y.";
+	MSGs[2] = "This point can't go more.";
+	MSGs[3] = "This point don't exist.";
+	MSGs[4] = "Please, don't put equal points.";
+	MSGs[5] = "These points are in similar coordinates.";
+	MSGs[6] = "Yes.";
+	MSGs[7] = "No.";
 	
-//	int thePoints.size();
-//	cout << "What is de max number of points do you want? ";
-//	cin >> thePoints.size();
+	// BRANCO CLARO NO PRETO	SetConsoleTextAttribute(hConsole, 15) || cout << "\033[0m";
+	
+	// PRETO NO BRANCO CLARO	SetConsoleTextAttribute(hConsole, 240) || cout << "\033[30;107m";
+	// PRETO NO AMARELO			SetConsoleTextAttribute(hConsole, 224) || cout << "\033[30;103m";
+	// VERDE CLARO NO PRETO		SetConsoleTextAttribute(hConsole, 10) || cout << "\033[92;40m";
+	// VERDE ESCURO NO PRETO	SetConsoleTextAttribute(hConsole, 2) || cout << "\033[32;40m";
+	// CIANO CLARO NO PRETO		SetConsoleTextAttribute(hConsole, 11) || cout << "\033[96;40m";
+	// CIANO ESCURO NO PRETO	SetConsoleTextAttribute(hConsole, 3) || cout << "\033[36;40m";
+	// AZUL CLARO NO PRETO		SetConsoleTextAttribute(hConsole, 9) || cout << "\033[94;40m";
+	// AZUL ESCURO NO PRETO		SetConsoleTextAttribute(hConsole, 1) || cout << "\033[34;40m";
 	
 	vector<Ponto> thePoints;
 	vector<Ponto> tmpObjs;
@@ -46,10 +61,10 @@ int main() {
 	bool isPoint;
 	do {
 //		system("CLS");
-		cout << "\033[2J\033[1;1H";
+//		cout << "\033[2J\033[1;1H";
+		if (system("CLS")) system("clear");
 		
 		for(i = 0; i < rows; i++) {
-//		    //SetConsoleTextAttribute(hConsole, 15);
 			for(j = 0; j < cols; j++) {
 				isPoint = false;
 				for (k = 0; k < thePoints.size(); k++) {
@@ -60,38 +75,43 @@ int main() {
 				}
 				if (isPoint) {
 				
-//					//SetConsoleTextAttribute(hConsole, 10);
-					
-					cout << "\033[92m" << thePoints[k].getId() << "\033[0m";
+					SetConsoleTextAttribute(hConsole, 10) || cout << "\033[92;40m";
+					cout << thePoints[k].getId();
+					SetConsoleTextAttribute(hConsole, 15) || cout << "\033[0m";
 				
 				} else if (i == 0 && j == cols / 2) {
 				
-//					//SetConsoleTextAttribute(hConsole, 9);
-					cout << "\033[94m" << "^" << "\033[0m";
+					SetConsoleTextAttribute(hConsole, 11) || cout << "\033[94m";
+					cout << "^";
+					SetConsoleTextAttribute(hConsole, 15) || cout << "\033[0m";
 				
 				} else if (i == rows / 2 && j == cols - 1) {
 				
-//					//SetConsoleTextAttribute(hConsole, 11);
-					cout << "\033[96m" << ">" << "\033[0m";
+					SetConsoleTextAttribute(hConsole, 11) || cout << "\033[96;40m";
+					cout << ">";
+					SetConsoleTextAttribute(hConsole, 15) || cout << "\033[0m";
 				
 				} else if (i == rows / 2 && j == cols / 2) {
 				
-					//SetConsoleTextAttribute(hConsole, 2);
-					cout << "\033[32m" << "+" << "\033[0m";
+					SetConsoleTextAttribute(hConsole, 2) || cout << "\033[32;40m";
+					cout << "+";
+					SetConsoleTextAttribute(hConsole, 15) || cout << "\033[0m";
 				
 				} else if (i == rows / 2) {
 				
-					//SetConsoleTextAttribute(hConsole, 3);
-					cout << "\033[36m" << "-" << "\033[0m";
+					SetConsoleTextAttribute(hConsole, 3) || cout << "\033[36;40m";
+					cout << "-";
+					SetConsoleTextAttribute(hConsole, 15) || cout << "\033[0m";
 				
 				} else if (j == cols / 2) {
 				
-					//SetConsoleTextAttribute(hConsole, 1);
-					cout << "\033[34m" << "|" << "\033[0m";
+					SetConsoleTextAttribute(hConsole, 1) || cout << "\033[34;40m";
+					cout << "|";
+					SetConsoleTextAttribute(hConsole, 15) || cout << "\033[0m";
 				
 				} else {
 					
-					//SetConsoleTextAttribute(hConsole, 15);
+					SetConsoleTextAttribute(hConsole, 15) || cout << "\033[0m";
 					cout << " ";
 				
 				}
@@ -99,16 +119,17 @@ int main() {
 			cout << endl;
 		}
 		cout << endl;
-		//SetConsoleTextAttribute(hConsole, 249);
-		cout << "\033[107;30m" << "TIPY YOUR COMMAND: ";
-		//SetConsoleTextAttribute(hConsole, 240);
+		SetConsoleTextAttribute(hConsole, 240) || cout << "\033[30;107m";
+		cout << "TIPY YOUR COMMAND: ";
+		
 		cin >> cmd[0];
-		cout << "\033[0m";
+		SetConsoleTextAttribute(hConsole, 15) || cout << "\033[0m";
 
 		if (cmd[0] == "exit");
 		else if (cmd[0] == "help") {
-			//SetConsoleTextAttribute(hConsole, 224);
-			cout << endl << "\033[103;30m";
+			
+			cout << endl;
+			SetConsoleTextAttribute(hConsole, 224) || cout << "\033[30;103m";
 			cout << "exit                                 >> To exit" << endl;
 			cout << "help                                 >> To show the commands" << endl;
 			cout << endl << "// Where have '[id]', is the identificator of the point'" << endl;
@@ -120,9 +141,10 @@ int main() {
 			cout << "[id] = midd [id] [id]                >> To put a point in the middle between two points" << endl;
 			cout << "collin [id] [id] [id]                >> To check if tree points are collinears" << endl;
 			cout << "dist points [id] [id]                >> To calculate the distance between two points" << endl;
-			cout << "del [id]                             >> To delete the point" << "\033[0m" << endl << endl;
-			//SetConsoleTextAttribute(hConsole, 15);
-//			system("PAUSE");
+			cout << "del [id]                             >> To delete the point";
+			SetConsoleTextAttribute(hConsole, 15) || cout << "\033[0m";
+			cout << endl << endl;
+			
 			getch();
 		} else if (cmd[0] == "new") {
 			cin >> cmd[1] >> cmd[2];

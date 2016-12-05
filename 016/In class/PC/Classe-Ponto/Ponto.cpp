@@ -10,7 +10,7 @@ Ponto::Ponto(int a, int b):id(contId++) {
 		this->setX(0);
 		this->setY(0);
 	}
-	this->declared = false;
+//	this->declared = false;
 }
 int Ponto::getX() const {
 	return this->x;
@@ -21,11 +21,11 @@ int Ponto::getY() const {
 char Ponto::getId() const {
 	return this->id;
 }
-bool Ponto::getDeclared() const {
-	return this->declared;
-}
+//bool Ponto::getDeclared() const {
+//	return this->declared;
+//}
 bool Ponto::setX(int a) {
-	this->declared = true;
+//	this->declared = true;
 	if (a > -((this->cols / 2) + (1 / 2)) && a < (this->cols / 2) + (1 / 2)) {
 		this->x = a;
 		return true;
@@ -33,7 +33,7 @@ bool Ponto::setX(int a) {
 		return false;
 }
 bool Ponto::setY(int b) {
-	this->declared = true;
+//	this->declared = true;
 	if (b > -((this->rows / 2) + (1 / 2)) && b < (this->rows / 2) + (1 / 2)) {
 		this->y = b;
 		return true;
@@ -48,7 +48,7 @@ void Ponto::operator=(Ponto A) {
 void Ponto::delPoint() {
 	this->setX(0);
 	this->setY(0);
-	this->declared = false;
+//	this->declared = false;
 }
 Ponto middPoint(Ponto A, Ponto B) {
 	Ponto M;
